@@ -1,9 +1,20 @@
-Description: Build
- Set the fortran compiler to gfortran.
- Actually use dos2unix.
+From: Antonio Valentino <antonio.valentino@tiscali.it>
+Date: Sun, 14 Jul 2024 11:02:44 +0200
+Subject: Build
+
+Set the fortran compiler to gfortran.
+Actually use dos2unix.
+
+Forwarded: not-needed
+---
+ Makefile | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 613f06a..6562564 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -31,7 +31,7 @@
+@@ -31,7 +31,7 @@ BIN_DIR		= /usr/local/bin
  #
  #FC		= fc		# Generic
  #FC		= g77		# Linux, older versions of gcc
@@ -12,7 +23,7 @@ Description: Build
  #FC             = ifort         # Intel fortran compiler
  #
  #CC		= cc		# Generic
-@@ -72,8 +72,8 @@
+@@ -72,8 +72,8 @@ RANLIB		= ranlib
  # 5. On Windows systems output files need to by Unixised before comparison.
  #    To do this right, change "touch" to "dos2unix" below.
  #
@@ -23,7 +34,7 @@ Description: Build
  #
  # 6. This should be all that MIGHT need changing. Now type 'make' to create
  #    the programs  'getorb'  and  'lodr'. If this is successful, you may like
-@@ -169,7 +169,7 @@
+@@ -169,7 +169,7 @@ lodr_test:	lodr
  #
  install:	$(EXECUTABLES)
  		chmod 755 $(EXECUTABLES)
@@ -32,3 +43,12 @@ Description: Build
  #
  # H. If that is finished, cut the crap and type 'make clean'.
  #    Or really get rid off all that was needed to make the executables
+@@ -196,7 +196,7 @@ getorb:		getorb.a getorb_main.o
+ 		$(FC) getorb_main.o getorb.a -o $@ $(LFLAGS)
+ lodr:		getorb.a lodr.o
+ 		$(FC) lodr.o getorb.a -o $@ $(LFLAGS)
+-mdate:		mdate_main.o
++mdate:		mdate_main.o getorb.a
+ 		$(FC) mdate_main.o getorb.a -o $@ $(LFLAGS)
+ #
+ # K. Extra: convdate. Since it requires interaction with C, we
