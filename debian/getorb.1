@@ -1,0 +1,61 @@
+.TH GETORB 1 "October 31, 2010"
+.SH NAME
+getorb \- program to interpolate the ODR files
+.SH SYNOPSIS
+.B getorb
+.RI [t=|ymd=|mjd=|doy=|sec=] " t0 " [,t1,dt] " " [+] "path"
+.SH DESCRIPTION
+The program
+.B getorb
+allows you to interpolate the DUT orbit at any required epoch (during the
+span of the data files) or for a range of epochs.
+The program prints out time (UTC), error value, latitude, longitude,
+orbital altitude (GRS80), and XYZ (Earth Fixed).
+.PP
+.SH OPTIONS
+.TP
+.B t0
+epoch for the orbit interpolation in various date formats.
+.TP
+.B t0,t1,dt
+start and end epoch (as above) and step size (in seconds) for the orbit
+interpolation.
+.TP
+.B ymd=
+indicates that the epochs are specified as [YY]YYMMDD.DDD or
+[YY]YYMMDDHHMMSS.SSS.
+You may use the extra century indication, but it is not necessary for any
+date between 1950 and 2049.
+.TP
+.B mjd=
+indicates that the epochs are in Modified Julian Dates (MJD).
+.TP
+.B doy=
+is used when epochs are specied as [YY]YYDDD.DDD (year and day of year).
+.TP
+.B sec=
+specifies epochs in UTC seconds since 1 January 1985.
+.TP
+.B [t=]
+it is an optional prefix.
+In will try to identify whether MJD.D, [YY]YYMMDD.D, or [YY]YYMMDDHHMMSS.S
+where specified (same as when t= is omitted.
+After 2003 the use of prefix t= will not properly recognise MJD.D,
+use prefix mjd= instead.
+.TP
+.B path
+full or relative path name of the directory in which the ODR files are stored.
+When a + is added in front of the path name, the path name is considered to
+be of a single ODR file.
+.SH EXAMPLES
+  getorb mjd=50001.500 /home/ers2/ODR
+  getorb ymd=991231235959,000101000159,60 .
+.SH SEE ALSO
+.BR lodr (1),
+.BR mdate (1).
+.br
+.SH AUTHOR
+getorb was written by Remko Scharroo.
+.PP
+This manual page was written by Antonio Valentino <antonio.valentino@tiscali.it>,
+for the Debian project (and may be used by others).

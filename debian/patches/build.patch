@@ -1,0 +1,34 @@
+Description: Build
+ Set the fortran compiler to gfortran.
+ Actually use dos2unix.
+--- a/Makefile
++++ b/Makefile
+@@ -31,7 +31,7 @@
+ #
+ #FC		= fc		# Generic
+ #FC		= g77		# Linux, older versions of gcc
+-#FC             = gfortran      # Linux, gcc version 4 or higher
++FC             = gfortran      # Linux, gcc version 4 or higher
+ #FC             = ifort         # Intel fortran compiler
+ #
+ #CC		= cc		# Generic
+@@ -72,8 +72,8 @@
+ # 5. On Windows systems output files need to by Unixised before comparison.
+ #    To do this right, change "touch" to "dos2unix" below.
+ #
+-DOS2UNIX	= touch
+-#DOS2UNIX	= dos2unix
++#DOS2UNIX	= touch
++DOS2UNIX	= dos2unix
+ #
+ # 6. This should be all that MIGHT need changing. Now type 'make' to create
+ #    the programs  'getorb'  and  'lodr'. If this is successful, you may like
+@@ -169,7 +169,7 @@
+ #
+ install:	$(EXECUTABLES)
+ 		chmod 755 $(EXECUTABLES)
+-		mv $(EXECUTABLES) $(BIN_DIR)
++		cp $(EXECUTABLES) $(BIN_DIR)
+ #
+ # H. If that is finished, cut the crap and type 'make clean'.
+ #    Or really get rid off all that was needed to make the executables

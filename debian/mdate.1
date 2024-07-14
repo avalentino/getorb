@@ -1,0 +1,64 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH MDATE 1 "October 31, 2010"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+mdate \- program to convert almost any date format to others
+.SH SYNOPSIS
+.B mdate
+.RI [\-format] " date"
+.SH DESCRIPTION
+Since the Delft orbits are time tagged in seconds from 1985 and you may like
+to handle year-month-day, year-dayofyear, or MJD, date conversions are often
+necessary.
+You'll see in getorb_main.f how this is done with the subroutines sec85 and
+mdate.
+These two routines are also at the heart of a nice little tool what runs
+from the command line.
+It accepts almost any from of input date and writes it out in almost any
+date format you like too.
+In addition it can add some extra time to the data you give.
+Very practical to determine the day of tomorrow.
+.PP
+.SH OPTIONS
+.TP
+.B date
+can be of the form:
+ YYMMDD.DDD       = Year-month-day and fractions of day
+ YYYYMMDD.DDD     = idem
+ YYDDD.DDD        = Year, day of the year and fractions of day
+ YYYYDDD.DDD      = idem
+ MJD.DDD          = Modified Julian Day and fractions of day
+ YYMMDDHHMMSS.SSS = year-month-day hour-minute-seconds and fractions of seconds
+ YYYYMMDDHHMMSS.S = idem
+ SEC85.SSS        = UTC seconds since 1985 and fraction of seconds
+.TP
+.B \format
+specifies the date format (if not specified, it is guessed
+ \-y  = YYMMDD.DDD or YYYYMMDD.DD
+ \-l  = YYMMDDHHMMSS.S or YYYYMMDDHHMMSS.S
+ \-d  = YYDDD.DDD or YYYYDDD.DD
+ \-m  = MJD.DDD
+ \-s  = SEC85.SSS
+.SH SEE ALSO
+.BR getorb (1),
+.BR lodr (1).
+.br
+.SH AUTHOR
+mdate was written by Remko Scharroo.
+.PP
+This manual page was written by Antonio Valentino <antonio.valentino@tiscali.it>,
+for the Debian project (and may be used by others).

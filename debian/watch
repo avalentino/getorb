@@ -1,0 +1,5 @@
+# Compulsory line, this is a version 3 file
+version=4
+
+http://www.deos.tudelft.nl/ers/precorbs/tools/getorb_pack.shtml \
+    getorb_(.*)\.tar\.gz

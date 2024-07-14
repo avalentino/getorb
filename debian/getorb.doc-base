@@ -1,0 +1,9 @@
+Document: getorb
+Title: Getorb README
+Author: Remko Scharroo
+Abstract: This document provides general info about getorb.
+Section: Science/Geoscience
+
+Format: HTML
+Index: /usr/share/doc/getorb/index.html
+Files: /usr/share/doc/getorb/*.html

@@ -1,0 +1,20 @@
+Source: getorb
+Maintainer: Antonio Valentino <antonio.valentino@tiscali.it>
+Section: multiverse/science
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               dos2unix,
+               gfortran
+Standards-Version: 4.6.2
+Homepage: http://www.deos.tudelft.nl/ers/precorbs/tools/getorb_pack.shtml
+
+Package: getorb
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Precise orbits interpolation utility
+ The software consists of a program lodr to list the content of the
+ Orbital Data Records (ODRs), a subroutine library getorb.a that can be
+ ported to some other program to interpolate the orbits and any given
+ moment, and an example program getorb to demonstrate the use of the
+ getorb.a library.
