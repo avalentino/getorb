@@ -10,11 +10,6 @@
 override_dh_auto_install:
 	dh_auto_install -- BIN_DIR=debian/getorb/usr/bin/
 
-override_dh_auto_clean:
-	dh_auto_clean
-	$(RM) getorb lodr mdate convdate getorb.a
-
 override_dh_auto_test:
 
-.PHONY: override_dh_auto_clean override_dh_auto_install \
-        override_dh_auto_test
+.PHONY: override_dh_auto_install override_dh_auto_test
