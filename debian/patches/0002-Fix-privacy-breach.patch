@@ -1,0 +1,22 @@
+From: Antonio Valentino <antonio.valentino@tiscali.it>
+Date: Sun, 14 Jul 2024 11:55:55 +0200
+Subject: Fix privacy breach
+
+Forwarded: not-needed
+---
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/index.html b/index.html
+index 48fdf56..4099f47 100644
+--- a/index.html
++++ b/index.html
+@@ -339,7 +339,7 @@ or contact: <A HREF="http://www.deos.tudelft.nl/~remko/">Remko Scharroo</A>
+ 
+ <TABLE>
+ <TR>
+-<TD><A HREF="http://www.deos.tudelft.nl/"><IMG SRC="http://www.deos.tudelft.nl/img/butt/deoshome.gif" ALT="DEOS" ALIGN=CENTER></A>
++<TD><A HREF="http://www.deos.tudelft.nl/"><ALT="DEOS" ALIGN=CENTER></A>
+ </TD>
+ 
+ <TD>This was brought to you by <A HREF="http://www.deos.tudelft.nl/~remko/">Remko
