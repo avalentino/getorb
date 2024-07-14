@@ -3,6 +3,7 @@ Maintainer: Antonio Valentino <antonio.valentino@tiscali.it>
 Section: multiverse/science
 Priority: optional
 Rules-Requires-Root: no
+XS-Autobuild: yes
 Build-Depends: debhelper-compat (= 13),
                dos2unix,
                gfortran
