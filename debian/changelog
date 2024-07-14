@@ -4,6 +4,7 @@ getorb (2.3.2.1-0ubuntu0ppa4~noble1) UNRELEASED; urgency=medium
   * Update d/watch.
   * debian/patches:
     - Refresh and renumber all patches.
+  * Update dates in d/copyright.
 
  -- Antonio Valentino <antonio.valentino@tiscali.it>  Sun, 14 Jul 2024 10:29:46 +0200
 
